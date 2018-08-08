@@ -273,7 +273,7 @@ def main():
         _img_path_   = options.img_path
         _model_ = getBestModel()
 
-        app.run(host=options.address_ip, port=options.serve_port)
+        app.run(host=options.address_ip, port=int(options.serve_port))
 
     else:
         print ("-"*5, "="*5, "TRAINING MODEL", "="*5, "-"*5)
