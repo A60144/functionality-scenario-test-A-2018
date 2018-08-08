@@ -48,6 +48,14 @@ from keras.models import model_from_json
 from keras.preprocessing.image import ImageDataGenerator, img_to_array, load_img
 from sklearn.preprocessing import LabelBinarizer
 
+import tensorflow as tf
+from keras.backend.tensorflow_backend import set_session
+
+config = tf.ConfigProto()
+#config.gpu_options.per_process_gpu_memory_fraction = 0.1
+config.gpu_options.allow_growth = True
+set_session(tf.Session(config=config))
+
 os.environ["JOBLIB_TEMP_FOLDER"]="./tmp"   # see issue https://goo.gl/4YZJUH
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
