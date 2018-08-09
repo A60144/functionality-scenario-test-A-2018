@@ -52,7 +52,7 @@ import tensorflow as tf
 from keras.backend.tensorflow_backend import set_session
 
 config = tf.ConfigProto()
-#config.gpu_options.per_process_gpu_memory_fraction = 0.1
+config.gpu_options.per_process_gpu_memory_fraction = 0.4
 config.gpu_options.allow_growth = True
 set_session(tf.Session(config=config))
 
